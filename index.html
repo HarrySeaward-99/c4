@@ -26,25 +26,20 @@
     }
 
     body {
-      /* Local image – relative path from this HTML file */
-      background-image: url('C4-Logo.PNG');   /* If in same folder */
-      /* background-image: url('images/C4-Logo.PNG'); */  /* If you put it in an 'images' subfolder */
-
-      background-repeat: repeat;               /* Tiles the image everywhere */
-      background-size: 400px auto;             /* Adjust this: smaller = denser tiles, larger = bigger tiles */
+      background-image: url('C4-Logo.PNG');
+      background-repeat: repeat;
       background-position: center;
-
-      /* Dark overlay so "COMING SOON" stands out on busy pattern */
       position: relative;
       font-family: sans-serif;
+      background-color: #111; /* fallback dark color if image fails to load */
     }
 
-    /* Semi-transparent black overlay */
+    /* Semi-transparent overlay – slightly darker on mobile for readability */
     body::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.5);  /* 0.4–0.6 darkness – tweak as needed */
+      background: rgba(0, 0, 0, 0.55); /* 0.55 works well on small screens */
       z-index: 1;
     }
 
@@ -57,20 +52,63 @@
       justify-content: center;
       color: white;
       text-align: center;
+      padding: 1.5rem; /* breathing room on small screens */
     }
 
     h1 {
       font-family: Impact, Haettenschweiler, "Arial Black", sans-serif;
-      font-size: 10vw;               /* Big & responsive */
       font-weight: bold;
       margin: 0;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      text-shadow: 5px 5px 0 #000, 8px 8px 0 #000;  /* Strong meme-style shadow */
+      text-shadow: 4px 4px 0 #000, 7px 7px 0 #000;
+      /* Smooth responsive sizing – never too small or too huge */
+      font-size: clamp(3.2rem, 14vw, 11rem);
+      line-height: 0.92;
     }
 
-    @media (max-width: 600px) {
-      h1 { font-size: 14vw; }
+    /* ────────────────────────────────────────────────
+       MOBILE-FIRST: small screens (default styles)
+    ──────────────────────────────────────────────── */
+    body {
+      background-size: 220px auto; /* smaller tiles = denser pattern on phones */
+    }
+
+    /* Tablets and up (≥ 640px) */
+    @media (min-width: 640px) {
+      body {
+        background-size: 320px auto; /* larger tiles, less dense */
+      }
+      h1 {
+        font-size: clamp(5rem, 11vw, 13rem);
+      }
+      .content {
+        padding: 2rem 3rem;
+      }
+    }
+
+    /* Desktop / large screens (≥ 1024px) */
+    @media (min-width: 1024px) {
+      body {
+        background-size: 420px auto; /* even larger tiles for wide screens */
+      }
+      h1 {
+        font-size: clamp(8rem, 9.5vw, 14rem);
+        letter-spacing: 0.12em;
+      }
+      .content {
+        padding: 3rem 5rem;
+      }
+    }
+
+    /* Extra-large screens (≥ 1440px) – optional luxury scaling */
+    @media (min-width: 1440px) {
+      body {
+        background-size: 520px auto;
+      }
+      h1 {
+        font-size: clamp(10rem, 8vw, 16rem);
+      }
     }
   </style>
 </head>
