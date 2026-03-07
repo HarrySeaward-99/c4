@@ -1,5 +1,6 @@
 /* styles.css - shared across all pages */
 
+/* Reset & base */
 body, html {
   margin: 0;
   padding: 0;
@@ -10,7 +11,7 @@ body {
   background-image: url('/C4-Logo.PNG');
   background-repeat: repeat;
   background-position: center top;
-
+  /* background-attachment: fixed; */ /* commented out for smooth scrolling */
   position: relative;
   font-family: sans-serif;
   background-color: #111;
@@ -26,6 +27,7 @@ body::before {
   pointer-events: none;
 }
 
+/* Shared container */
 .container, .content {
   position: relative;
   z-index: 2;
@@ -38,6 +40,7 @@ body::before {
   text-align: center;
 }
 
+/* Headings */
 h1 {
   font-family: Impact, Haettenschweiler, "Arial Black", sans-serif;
   font-weight: bold;
@@ -46,9 +49,9 @@ h1 {
   text-transform: uppercase;
   text-shadow: 4px 4px 0 #000, 7px 7px 0 #000;
   font-size: clamp(3.5rem, 12vw, 10rem);
-  line-height: 0.92;
 }
 
+/* Navigation */
 nav {
   margin: 1rem 0 2rem;
 }
@@ -67,21 +70,54 @@ nav a:hover {
   color: white;
 }
 
+/* Social & contact footer */
 footer {
   text-align: center;
-  padding: 2rem 0;
+  padding: 2.5rem 1rem 3rem;
   font-size: 1rem;
-  opacity: 0.8;
+  opacity: 0.85;
   margin-top: auto;
+  border-top: 1px solid rgba(255, 204, 0, 0.15);
 }
 
-/* Mobile-first background scaling */
+.social-links {
+  margin: 1rem 0 0.8rem;
+}
+
+.social-icon {
+  width: 36px;
+  height: 36px;
+  margin: 0 1rem;
+  vertical-align: middle;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.social-icon:hover {
+  transform: scale(1.15);
+  opacity: 0.9;
+}
+
+.email-link {
+  color: #ffcc00;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 0.5rem;
+  transition: color 0.3s;
+}
+
+.email-link:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+/* Responsive background scaling */
 body {
   background-size: 220px auto;
 }
 
 @media (min-width: 640px) {
   body { background-size: 320px auto; }
+  .container { padding: 3rem 4rem; }
   h1 { font-size: clamp(6rem, 10vw, 12rem); }
 }
 
