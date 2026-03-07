@@ -10,7 +10,7 @@ body {
   background-image: url('/C4-Logo.PNG');
   background-repeat: repeat;
   background-position: center top;
-  background-attachment: fixed;
+
   position: relative;
   font-family: sans-serif;
   background-color: #111;
