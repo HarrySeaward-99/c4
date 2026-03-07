@@ -20,7 +20,6 @@
       padding: 0;
       min-height: 100vh;
     }
-
     body {
       background-image: url('/C4-Logo.PNG');
       background-repeat: repeat;
@@ -31,7 +30,6 @@
       background-color: #111;
       color: white;
     }
-
     body::before {
       content: "";
       position: fixed;
@@ -40,7 +38,6 @@
       z-index: 1;
       pointer-events: none;
     }
-
     .content {
       position: relative;
       z-index: 2;
@@ -52,12 +49,10 @@
       text-align: center;
       padding: 1.5rem 1rem;
     }
-
     nav {
       margin: 1.5rem 0 2rem;
       width: 100%;
     }
-
     nav a {
       color: #ffcc00;
       text-decoration: none;
@@ -67,67 +62,64 @@
       text-shadow: 2px 2px 0 #000;
       transition: color 0.3s;
     }
-
     nav a:hover {
       color: white;
     }
-
     .logo-container {
       margin: 1rem 0 3rem;
       max-width: 80%;
     }
-
     .logo {
       max-width: 100%;
       height: auto;
-      max-height: 55vh;          /* prevents it from becoming too tall on large screens */
+      max-height: 55vh;
       width: auto;
       display: block;
       margin: 0 auto;
       filter: drop-shadow(0 8px 16px rgba(0,0,0,0.7));
     }
-
-    /* Social links footer area */
-    .social-footer {
+    /* Social & email footer (override or extend styles.css if needed) */
+    footer {
       margin-top: auto;
-      padding: 2rem 0 1rem;
+      padding: 2rem 0 3rem;
       text-align: center;
+      font-size: 1rem;
+      opacity: 0.85;
     }
-
+    .social-links {
+      margin-bottom: 1rem;
+    }
     .social-icon {
-      display: inline-block;
-      width: 48px;
-      height: 48px;
-      margin: 0 1.2rem;
-      transition: transform 0.3s, opacity 0.3s;
+      width: 40px;
+      height: 40px;
+      margin: 0 1rem;
+      vertical-align: middle;
+      transition: transform 0.3s;
     }
-
     .social-icon:hover {
       transform: scale(1.15);
-      opacity: 0.9;
     }
-
-    footer {
-      margin-top: 1rem;
-      font-size: 0.9rem;
-      opacity: 0.7;
+    .email-link {
+      color: #ffcc00;
+      text-decoration: none;
+      font-weight: bold;
     }
-
+    .email-link:hover {
+      color: white;
+      text-decoration: underline;
+    }
     /* Responsive background scaling */
     body {
       background-size: 220px auto;
     }
-
     @media (min-width: 640px) {
       body { background-size: 320px auto; }
       .logo { max-height: 60vh; }
     }
-
     @media (min-width: 1024px) {
       body { background-size: 450px auto; }
       .logo { max-height: 65vh; }
     }
-
     @media (min-width: 1440px) {
       body { background-size: 520px auto; }
       .logo { max-height: 70vh; }
@@ -143,45 +135,32 @@
 
     <!-- Foreground logo -->
     <div class="logo-container">
-      <img 
-        src="/C4- Explosion.PNG" 
-        alt="C4 Comedy Explosion Logo" 
+      <img
+        src="/C4- Explosion.PNG"
+        alt="C4 Comedy Explosion Logo"
         class="logo"
       >
     </div>
 
-    <!-- Social links -->
-    <div class="social-footer">
-      <a href="https://www.instagram.com/c4comedylive/" target="_blank" rel="noopener noreferrer">
-        <img 
-          src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" 
-          alt="Follow us on Instagram" 
-          class="social-icon"
-          width="48" 
-          height="48"
-        >
-      </a>
-      <!-- Add more icons here later (X, TikTok, etc.) -->
-    </div>
-
+    <!-- Social & email footer -->
     <footer>
-  <div class="social-links">
-    <a href="https://www.instagram.com/c4comedylive/" target="_blank" rel="noopener noreferrer">
-      <img 
-        src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" 
-        alt="Instagram" 
-        class="social-icon"
-      >
-    </a>
-  </div>
+      <div class="social-links">
+        <a href="https://www.instagram.com/c4comedylive/" target="_blank" rel="noopener noreferrer">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg"
+            alt="Follow us on Instagram"
+            class="social-icon"
+          >
+        </a>
+      </div>
 
-  <div>
-    © 2026 C4 Comedy • 
-    <a href="mailto:c4comedylive@gmail.com" class="email-link">
-      c4comedylive@gmail.com
-    </a>
-  </div>
-</footer>
+      <div>
+        © 2026 C4 Comedy • 
+        <a href="mailto:c4comedylive@gmail.com" class="email-link">
+          c4comedylive@gmail.com
+        </a>
+      </div>
+    </footer>
   </div>
 </body>
 </html>
