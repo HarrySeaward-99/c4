@@ -47,13 +47,22 @@
         </a>
       </div>
 
-      <div>
-        © 2026 C4 Comedy • 
-        <a href="mailto:c4comedylive@gmail.com" class="email-link">
-          c4comedylive@gmail.com
-        </a>
-      </div>
+     <div class="social-links">...</div>
+  <div>© 2026 C4 Comedy • </div> <!-- script will inject the link here -->
     </footer>
   </div>
+  <script>
+  // Simple obfuscation - bots without JS won't reconstruct it
+  (function() {
+    var user = 'c4comedylive';
+    var domain = 'gmail.com';
+    var link = document.createElement('a');
+    link.href = 'mailto:' + user + '@' + domain;
+    link.className = 'email-link';
+    link.textContent = user + '@' + domain;
+    document.querySelector('footer div:last-child').innerHTML = '© 2026 C4 Comedy • ';
+    document.querySelector('footer div:last-child').appendChild(link);
+  })();
+</script>
 </body>
 </html>
