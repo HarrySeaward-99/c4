@@ -49,8 +49,21 @@
       text-align: center;
       padding: 1.5rem 1rem;
     }
+    header {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-family: Impact, Haettenschweiler, "Arial Black", sans-serif;
+      font-weight: bold;
+      margin: 0;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-shadow: 4px 4px 0 #000, 7px 7px 0 #000;
+      font-size: clamp(4rem, 12vw, 9rem);
+    }
     nav {
-      margin: 1.5rem 0 2rem;
+      margin: 1rem 0 2rem;
       width: 100%;
     }
     nav a {
@@ -78,7 +91,6 @@
       margin: 0 auto;
       filter: drop-shadow(0 8px 16px rgba(0,0,0,0.7));
     }
-    /* Social & email footer (override or extend styles.css if needed) */
     footer {
       margin-top: auto;
       padding: 2rem 0 3rem;
@@ -128,6 +140,11 @@
 </head>
 <body>
   <div class="content">
+    <!-- Site title at the top -->
+    <header>
+      <h1>C4 Comedy</h1>
+    </header>
+
     <nav>
       <a href="/about/">About C4</a>
       <a href="/shows/">Shows</a>
@@ -143,7 +160,7 @@
     </div>
 
     <!-- Social & email footer -->
-  <footer>
+    <footer>
       <div class="social-links">
         <a href="https://www.instagram.com/c4comedylive/" target="_blank" rel="noopener noreferrer">
           <img
@@ -154,22 +171,13 @@
         </a>
       </div>
 
-     <div class="social-links">...</div>
-  <div>© 2026 C4 Comedy • </div> <!-- script will inject the link here -->
+      <div>
+        © 2026 C4 Comedy • 
+        <a href="mailto:c4comedylive@gmail.com" class="email-link">
+          c4comedylive@gmail.com
+        </a>
+      </div>
     </footer>
   </div>
-  <script>
-  // Simple obfuscation - bots without JS won't reconstruct it
-  (function() {
-    var user = 'c4comedylive';
-    var domain = 'gmail.com';
-    var link = document.createElement('a');
-    link.href = 'mailto:' + user + '@' + domain;
-    link.className = 'email-link';
-    link.textContent = user + '@' + domain;
-    document.querySelector('footer div:last-child').innerHTML = '© 2026 C4 Comedy • ';
-    document.querySelector('footer div:last-child').appendChild(link);
-  })();
-</script>
 </body>
 </html>
