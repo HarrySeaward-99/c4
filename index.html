@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>C4 Comedy</title> <!-- Updated title since "Coming Soon" is removed -->
+  <title>C4 Comedy</title>
 
   <!-- Favicon links -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -12,9 +12,6 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
-
-  <!-- Optional: Add shared styles.css if you created one earlier -->
-  <!-- <link rel="stylesheet" href="/styles.css"> -->
 
   <style>
     body, html {
@@ -52,7 +49,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 1.5rem;
+      padding: 1.5rem 1rem;
     }
 
     nav {
@@ -74,17 +71,25 @@
       color: white;
     }
 
-    /* Placeholder for future tagline or hero text (optional) */
-    .tagline {
-      font-size: clamp(2rem, 8vw, 5rem);
+    .logo-container {
       margin: 1rem 0 3rem;
-      opacity: 0.9;
+      max-width: 80%;
     }
 
-    /* Social links footer */
+    .logo {
+      max-width: 100%;
+      height: auto;
+      max-height: 55vh;          /* prevents it from becoming too tall on large screens */
+      width: auto;
+      display: block;
+      margin: 0 auto;
+      filter: drop-shadow(0 8px 16px rgba(0,0,0,0.7));
+    }
+
+    /* Social links footer area */
     .social-footer {
       margin-top: auto;
-      padding: 2rem 0;
+      padding: 2rem 0 1rem;
       text-align: center;
     }
 
@@ -92,7 +97,7 @@
       display: inline-block;
       width: 48px;
       height: 48px;
-      margin: 0 1rem;
+      margin: 0 1.2rem;
       transition: transform 0.3s, opacity 0.3s;
     }
 
@@ -107,21 +112,24 @@
       opacity: 0.7;
     }
 
-    /* Responsive background scaling (same as before) */
+    /* Responsive background scaling */
     body {
       background-size: 220px auto;
     }
 
     @media (min-width: 640px) {
       body { background-size: 320px auto; }
+      .logo { max-height: 60vh; }
     }
 
     @media (min-width: 1024px) {
       body { background-size: 450px auto; }
+      .logo { max-height: 65vh; }
     }
 
     @media (min-width: 1440px) {
       body { background-size: 520px auto; }
+      .logo { max-height: 70vh; }
     }
   </style>
 </head>
@@ -131,23 +139,27 @@
       <a href="/about/">About C4</a>
     </nav>
 
-    <!-- Optional: Add a tagline here instead of "COMING SOON" -->
-    <!-- <div class="tagline">The Fuse Is Lit</div> -->
+    <!-- Foreground logo -->
+    <div class="logo-container">
+      <img 
+        src="/C4-Explosion.PNG" 
+        alt="C4 Comedy Explosion Logo" 
+        class="logo"
+      >
+    </div>
 
-    <!-- Social links at the bottom -->
+    <!-- Social links -->
     <div class="social-footer">
       <a href="https://www.instagram.com/c4comedylive/" target="_blank" rel="noopener noreferrer">
         <img 
           src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" 
-          alt="Instagram" 
+          alt="Follow us on Instagram" 
           class="social-icon"
           width="48" 
           height="48"
         >
       </a>
-
-      <!-- Add more icons later, e.g. X/Twitter, TikTok -->
-      <!-- <a href="https://x.com/c4comedy" target="_blank"><img src="..." alt="X" class="social-icon"></a> -->
+      <!-- Add more icons here later (X, TikTok, etc.) -->
     </div>
 
     <footer>
